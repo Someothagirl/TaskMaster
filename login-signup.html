@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster</title>
+    <link rel="stylesheet" href="login-signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="bg-img"></div>
+    <div class="form-box">
+        <div class="form-content">
+            <div class="login" id="loginform">
+                <img src="login image.svg" alt="logo">
+                <h4>Welcome Back!</h4>
+                <p>Enter your details to access your account</p>
+                <div class="toggle">
+                    <button class="togglelog active" id="loginbtn">Login</button>
+                    <button class="togglesign" id="signupbtn">Sign Up</button>
+                </div>
+                <form>
+                    <label>Email Address*</label>
+                    <input type="email" placeholder="✉️ hello@example.com" required>
+                    <label>Password*</label>
+                    <input type="password" placeholder="🔒 ••••••••" required>
+                    <div class="actionbtns">
+                    <button class="help"><i class="fa fa-question-circle-o" aria-hidden="true"></i> Help?</button>
+                    <button class="next">Next Step</button>
+                    </div>
+                </form>
+                <p id="terms">By continuing, you agree to our Terms of Service & Privacy Policy</p>
+            </div>
+            <div class="signup" id="signupform">
+                <img src="login image.svg" alt="logo">
+                <h4>Join TaskMaster</h4>
+                <p>Create an account to boost your productivity</p>
+                <div class="toggle">
+                    <button class="togglelog" id="loginbtn2">Login</button>
+                    <button class="togglesign active" id="signupbtn2">Sign Up</button>
+                </div>
+                <form>
+                    <label>Full Name*</label>
+                    <input type="text" placeholder="👤 John Doe" required>
+                    <label>Email Address*</label>
+                    <input type="email" placeholder="✉️ hello@example.com" required>
+                    <label>Password*</label>
+                    <input type="password" placeholder="🔒 ••••••••" required>
+                    <p id="reminder">Password must be at least 6 characters long</p>
+                    <div class="actionbtns">
+                    <button class="help"><i class="fa fa-question-circle-o" aria-hidden="true"></i> Help?</button>
+                    <button class="create">Create Account</button>
+                    </div>
+                </form>
+                <p id="terms">By continuing, you agree to our Terms of Service & Privacy Policy</p>
+            </div>
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const loginForm = document.getElementById("loginform");
+        const signupForm = document.getElementById("signupform");
+        const toggleForm = (showForm, hideForm) => {
+            showForm.style.display = "block";
+            hideForm.style.display = "none";
+            document.querySelectorAll('.togglelog, .togglesign').forEach(btn => {
+                btn.classList.toggle('active', btn.classList.contains(showForm === loginForm ? 'togglelog' : 'togglesign'));
+            });
+        };
+        document.getElementById("loginbtn").addEventListener("click", () => toggleForm(loginForm, signupForm));
+        document.getElementById("signupbtn").addEventListener("click", () => toggleForm(signupForm, loginForm));
+        document.getElementById("loginbtn2").addEventListener("click", () => toggleForm(loginForm, signupForm));
+        document.getElementById("signupbtn2").addEventListener("click", () => toggleForm(signupForm, loginForm));
+    });
+    </script>
+</body>
+</html>
