@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskMaster</title>
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="layout">
+    <aside class="sidebar">
+        <div class="logo">TaskMaster</div>
+        <div class="user-box">
+            <div class="avatar">M</div>
+            <div class="user-info">
+                <h4>Mariam Alaa</h4>
+                <p>mariam.alaa0210@outlook.com</p>
+            </div>
+        </div>
+        <ul class="menu">
+            <a href="dashboard.html"><li><i class="fa fa-home"></i> Dashboard</li></a>
+            <li class="active"><i class="fa fa-check-square"></i> Tasks</li>
+            <a href="communityboard.html"><li><i class="fa fa-users"></i> Community</li></a>
+            <li><i class="fa fa-dollar-sign"></i> Expenses</li>
+            <li><i class="fa fa-sticky-note"></i> Notes</li>
+            <li><i class="fa fa-cog"></i> Settings</li>
+        </ul>
+        <button class="logout" onclick="window.location.href='login-signup.html'"><i class="fa fa-sign-out"></i>Logout</button>
+    </aside>
+    <main class="content">
+        <h1><i class="fa fa-check"></i> Task Management</h1>
+        <p class="subtitle">Manage and track your tasks</p>
+        <div class="task-header">
+            <div class="tabs">
+                <button class="active">My Tasks</button>
+                <button>AI Summary</button>
+            </div>
+            <button class="add-btn"><i class="fa fa-plus"></i> Add Task</button>
+        </div>
+        <div class="task-empty-box">
+            <p><i class="fa fa-circle-notch"></i></p>
+            <p>No tasks yet</p>
+            <span>Click "Add Task" to create your first task</span>
+        </div>
+    </main>
+</div>
+</body>
+</html>
